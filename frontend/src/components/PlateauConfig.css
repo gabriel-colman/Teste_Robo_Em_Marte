@@ -1,0 +1,26 @@
+.landing-animation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .rover-image {
+    width: 50px;
+    animation: landing 3s ease-in-out forwards;
+  }
+  
+  @keyframes landing {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(20px);
+      opacity: 1;
+    }
+  }
+  

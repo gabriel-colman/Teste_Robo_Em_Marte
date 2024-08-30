@@ -1,0 +1,55 @@
+.instructions-container {
+  background-color: rgba(0, 0, 0, 0.7); /* fundo semitransparente */
+  padding: 1rem;
+  border-radius: 8px;
+  color: white; /* cor do texto para maior contraste */
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto; /* centralizar na página */
+}
+  
+  .instructions-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .instructions-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .instructions-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .step {
+    text-align: center;
+  }
+  
+  .step-number {
+    background-color: #1a1a9f;
+    color: white;
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin: 0 auto 10px;
+  }
+  
+  .step-command {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .step-description {
+    font-size: 1em;
+    max-width: 150px;
+    margin: 0 auto;
+  }
+  
