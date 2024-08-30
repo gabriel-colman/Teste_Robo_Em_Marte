@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// O componente PlateauConfig é responsável por configurar o tamanho do platô
 const PlateauConfig = ({ setPlateauSize }) => {
   const [width, setWidth] = useState('');
   const [height, setHeight] = useState('');

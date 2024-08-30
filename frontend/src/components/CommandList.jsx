@@ -1,6 +1,7 @@
 import React from 'react';
 
-const CommandList = ({ rovers }) => { 
+// A lista de comandos dos rovers é exibida em uma lista não ordenada
+const CommandList = ({ rovers }) => {  // Recebe a lista de rovers como propriedade
   return (
     <div className="p-6 bg-transparent shadow-lg rounded-lg mb-4">
       <h2 className="text-2xl font-semibold mb-4 text-center text-white">Comandos dos Rovers</h2>

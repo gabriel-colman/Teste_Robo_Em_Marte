@@ -1,5 +1,6 @@
 import React from 'react';
 
+// O componente RoverStatus exibe a posição final de cada rover
 const RoverStatus = ({ rovers }) => { // aqui definimos o componente RoverStatus que recebe a prop rovers
   return (
     <div className="p-6 bg-transparent shadow-lg rounded-lg mb-4 max-w-3xl mx-auto">

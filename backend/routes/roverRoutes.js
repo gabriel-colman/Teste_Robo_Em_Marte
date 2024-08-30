@@ -1,4 +1,3 @@
-// routes/roverRoutes.js
 const express = require('express');
 const router = express.Router();
 const roverController = require('../controllers/roverController');

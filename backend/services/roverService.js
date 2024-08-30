@@ -1,9 +1,10 @@
 class RoverService { // Classe para gerenciar a posição e os comandos dos rovers
-    constructor(plateau) {
+  // Aqui é feita a requisição e a resposta
+  constructor(plateau) {
       this.plateau = plateau; // { x: 5, y: 5 }
       this.rovers = []; // Lista de rovers com seus estados atuais
     }
-  
+    
     addRover(initialPosition) { 
       // Adiciona um novo rover à lista
       this.rovers.push({

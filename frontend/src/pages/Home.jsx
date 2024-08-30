@@ -8,6 +8,7 @@ import introBackground from '../assets/intro-background.png'; // Imagem de fundo
 import marsBackground from '../assets/mars-background.png'; // Imagem de fundo para o formulário
 import Instructions from '../context/Instructions'; // Importe o componente Instructions
 
+// O componente Home é a página inicial do aplicativo
 const Home = () => {
   const { plateauSize, setPlateauSize, rovers, addRover } = useContext(RoverContext);
 

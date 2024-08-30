@@ -1,6 +1,7 @@
 import React from 'react';
 import './Instructions.css'; // Certifique-se de criar e importar o arquivo CSS
 
+// O componente Instructions exibe as instruções para navegar o rover
 const Instructions = () => {
   return (
     <div className="instructions-container">

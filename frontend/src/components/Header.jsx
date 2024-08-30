@@ -1,5 +1,6 @@
 import React from 'react';
 
+// O componente Header exibe o título e a descrição do simulador
 const Header = () => { // Definimos o componente Header
   return (
     <header className="py-6 bg-purple-900 text-white text-center shadow-md"> {/* Alterado para roxo escuro */}

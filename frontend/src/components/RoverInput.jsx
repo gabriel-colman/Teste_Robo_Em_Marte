@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import compassImage from '../assets/busula.jpg'; // Imagem da bússola
 
-const RoverInput = ({ addRover }) => {
-  const [x, setX] = useState(0);
+// O componente RoverInput é responsável por adicionar um novo rover
+const RoverInput = ({ addRover }) => { // Define o componente RoverInput
+  const [x, setX] = useState(0); // Define o estado x com o valor inicial 0
   const [y, setY] = useState(0);
   const [direction, setDirection] = useState('N');
   const [commands, setCommands] = useState('');
 
+  // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (commands.match(/^[LRM]+$/i)) {
+    e.preventDefault(); // Impede o comportamento padrão de envio de formulário
+    if (commands.match(/^[LRM]+$/i)) { // Verifica se os comandos são válidos
       addRover({ x, y, direction, commands });
       alert('Rover adicionado com sucesso!');
       setX(0);
@@ -21,6 +23,7 @@ const RoverInput = ({ addRover }) => {
     }
   };
 
+  // Retorna o formulário para adicionar um novo rover
   return (
     <div className="p-6 bg-transparent shadow-lg rounded-lg mb-4 max-w-3xl mx-auto"> 
       <h2 className="text-2xl font-semibold mb-4 text-center text-white">Adicionar Rover</h2>
