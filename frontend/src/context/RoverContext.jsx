@@ -1,19 +1,30 @@
 import React, { createContext, useState } from 'react';
 
-export const RoverContext = createContext(); // aqui criamos o contexto RoverContext
+export const RoverContext = createContext(); 
 
-// Este componente fornece o contexto para os componentes filhos
-export const RoverProvider = ({ children }) => { // aqui definimos o componente RoverProvider que recebe children
-  const [plateauSize, setPlateauSize] = useState({ width: 5, height: 5 });
-  const [rovers, setRovers] = useState([]); // aqui definimos o estado rovers
+export const RoverProvider = ({ children }) => {
+  const [roverStatus, setRoverStatus] = useState([]);
 
-  const addRover = (rover) => { // aqui definimos a função addRover
-    setRovers([...rovers, rover]); // adiciona um rover ao estado rovers
+  // Função para enviar comandos para o backend
+  const sendRoverCommands = async (commands) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/rovers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ commands })
+      });
+
+      const data = await response.json();
+      setRoverStatus(data);  // Atualiza o estado com a resposta do backend
+    } catch (error) {
+      console.error('Erro ao enviar comandos para o rover:', error);
+    }
   };
 
-//   const addRover = (rover) => { // aqui definimos a função addRover
   return (
-    <RoverContext.Provider value={{ plateauSize, setPlateauSize, rovers, addRover }}>
+    <RoverContext.Provider value={{ roverStatus, sendRoverCommands }}>
       {children}
     </RoverContext.Provider>
   );

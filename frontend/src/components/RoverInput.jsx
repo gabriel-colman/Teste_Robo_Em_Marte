@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import compassImage from '../assets/busula.jpg'; // Imagem da bússola
+import { RoverContext } from '../context/RoverContext';
 
 // O componente RoverInput é responsável por adicionar um novo rover
 const RoverInput = ({ addRover }) => { // Define o componente RoverInput
@@ -7,6 +8,10 @@ const RoverInput = ({ addRover }) => { // Define o componente RoverInput
   const [y, setY] = useState(0);
   const [direction, setDirection] = useState('N');
   const [commands, setCommands] = useState('');
+
+  const [commandInput, setCommandInput] = useState('');
+  const { sendRoverCommands } = useContext(RoverContext);
+
 
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
@@ -18,10 +23,15 @@ const RoverInput = ({ addRover }) => { // Define o componente RoverInput
       setY(0);
       setDirection('N');
       setCommands('');
+
+      sendRoverCommands(commandInput);  // Envia os comandos para o backend
+      setCommandInput('');  // Limpa o campo de entrada
     } else {
       alert('Comandos inválidos! Use apenas L, R ou M.');
     }
   };
+
+
 
   // Retorna o formulário para adicionar um novo rover
   return (
@@ -42,8 +52,10 @@ const RoverInput = ({ addRover }) => { // Define o componente RoverInput
         <div>
           <label className="block text-white">Y:</label>
           <input 
-            type="number" 
-            value={y} 
+            type="text"
+            value={commandInput}
+            // type="number" 
+            // value={y} 
             onChange={(e) => setY(e.target.value)} 
             className="border border-white rounded px-2 py-1 w-full bg-transparent text-white"
             min="0"
